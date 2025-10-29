@@ -91,3 +91,21 @@ nav#menu {
 .boton-comprar:hover {
     background-color: #333;            /* color más claro al pasar el ratón */
 }
+
+.cabecera {
+    text-align: center;                 /* todo centrado */
+    padding: 10em 2em;     /* espacio amplio arriba y abajo */
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Título grande */
+.titulo-cabecera {
+    font-family: 'Rubik, sans-serif';
+    font-size: 8rem;                
+    line-height: 0.9;     /* letras más compactas verticalmente */
+    font-weight: 900;                   
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 20px;
+}
+
