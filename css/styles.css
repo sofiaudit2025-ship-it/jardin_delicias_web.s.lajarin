@@ -1,0 +1,93 @@
+:root {
+    --fuente-titulos: 'Rubik';
+    --fuente-texto: 'Fragment+Mono';
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente-texto);
+    scroll-behavior: smooth;
+}
+
+h1 > a,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+nav#menu {
+    background-color: #fff;        
+    position: sticky;              /* el menú se queda fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 100;                  /* se asegura de quedar por encima del resto */
+    padding: 10px 40px;            /* espacio interior: arriba/abajo, lados */
+}
+
+/* ---  (alineamos todo en una fila) --- */
+.menu-contenedor {
+    display: flex;                 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1em;
+}
+
+/* --- Bloque izquierdo: logo + enlaces --- */
+.menu-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 30px;      /* separación entre el logo y los enlaces */
+}
+
+/* --- Logo --- */
+.logo a {
+    font-family: 'Rubik', sans-serif; 
+    font-size: 1em;
+    text-decoration:none;            
+    color: #000000;
+    font-weight: 800;
+    letter-spacing: 0.2px; 
+       
+             
+}
+
+/* --- Enlaces principales --- */
+.nav-links {
+    list-style: none;       /* quitamos los puntos de la lista */
+    display: flex;
+    gap: 20px;              /* espacio horizontal entre enlaces */
+    margin: 0;             /* quitamos márgenes por defecto */
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;             /* sin subrayado */
+    color: #333;             /* tono gris oscuro para suavizar */
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #000;         /* color más oscuro al pasar el ratón */
+}
+
+/* --- Botón derecho --- */
+.boton-comprar {
+    background-color: #000000;          
+    color: #fff;                       /* texto blanco */
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    padding: 10px 20px;                /* espacio interior */
+    border-radius: 9999px;             /* forma de “píldora” */
+    transition: background-color 0.3s ease;
+}
+
+.boton-comprar:hover {
+    background-color: #333;            /* color más claro al pasar el ratón */
+}
