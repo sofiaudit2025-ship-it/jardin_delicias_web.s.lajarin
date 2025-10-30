@@ -28,7 +28,7 @@ h2 {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,42 +39,12 @@ h2 {
 #porcentaje {
     font-family: 'Fragment Mono', monospace;
     font-size: 6vw;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     transition: opacity 0.5s;
 }
 
-/* --- Artistas --- */
-.artistas {
-    font-family: var(--fuente-titulos);
-    text-align: center;
-    padding: 20vh 10%;       
-    line-height: 0.9;        
-    text-transform: uppercase;
-    background-color: #000;  
-    color: #fff;             
-}
-
-.artistas h2 {
-    font-size: 3.8rem;
-    font-weight: 900;
-}
-
-.artistas h3 {
-    font-size: 2.8rem;
-    font-weight: 700;
-}
-
-.artistas h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
-    
-
-
-
 nav#menu {
-    background-color: #fff;        
+    background-color: #000000;        
     position: sticky;              /* el menú se queda fijo arriba al hacer scroll */
     top: 0;
     z-index: 100;                  /* se asegura de quedar por encima del resto */
@@ -101,7 +71,7 @@ nav#menu {
     font-family: 'Rubik', sans-serif; 
     font-size: 1em;
     text-decoration:none;            
-    color: #000000;
+    color: #ffffff;
     font-weight: 800;
     letter-spacing: 0.2px; 
        
@@ -110,55 +80,151 @@ nav#menu {
 
 /* --- Enlaces principales --- */
 .nav-links {
-    list-style: none;       /* quitamos los puntos de la lista */
+    list-style: none;      
     display: flex;
-    gap: 20px;              /* espacio horizontal entre enlaces */
+    gap: 20px;              
     margin: 0;             /* quitamos márgenes por defecto */
     padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;            
-    color: #333;             /* tono gris oscuro para suavizar */
+    color: #b3b3b3;             
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #000;         /* color más oscuro al pasar el ratón */
+    color: #e7e7e7f6;         
 }
 
 /* --- Botón derecho --- */
 .boton-comprar {
-    background-color: #000000;          
-    color: #fff;                       /* texto blanco */
+    background-color: #ffffff;          
+    color: #000000;                       
     text-decoration: none;
     font-family: 'Rubik', sans-serif;
     font-weight: 600;
-    padding: 10px 20px;                /* espacio interior */
-    border-radius: 9999px;             /* forma de “píldora” */
+    padding: 10px 20px;               
+    border-radius: 9999px;            
     transition: background-color 0.3s ease;
 }
 
 .boton-comprar:hover {
-    background-color: #333333;            /* color más claro al pasar el ratón */
+    background-color: #a2a2a2;          
 }
 
 .cabecera {
-    text-align: center;                 /* todo centrado */
-    padding: 10em 2em;     /* espacio amplio arriba y abajo */
+    text-align: center;                
+    padding: 10em 2em;    
     font-family: 'Rubik', sans-serif;
 }
 
-/* Título grande */
-.titulo-cabecera {
-    font-family: 'Rubik, sans-serif';
-    font-size: 8rem;                
-    line-height: 0.9;     /* letras más compactas verticalmente */
-    font-weight: 900;                   
+/* --- Artistas --- */
+.artistas {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-titulos);
+    text-align: center;
     text-transform: uppercase;
-    color: #111;
-    margin-bottom: 20px;
+    background-color: #000;
+    color: #fff;
+    z-index: 1;
+}
+/* --- Video de fondo --- */
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
+.contenido-artistas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    width: 90%;
+}
+
+.artistas::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* oscurece el video */
+    z-index: 1;
+}
+
+.artistas h2 {
+    font-size: 3.8rem;
+    font-weight: 900;
+}
+
+.artistas h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.artistas h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+
+/* --- Info Festival --- */
+.info-festival {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+    gap: 40px;
+    background-color: #000;
+    position: relative;
+    z-index: 3;
+    color: #fff;
+}
+
+.info-item {
+    flex: 1;
+}
+
+.label {
+    display: block;
+    font-family: 'Fragment Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.info-item h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    color: #ffffff;
+}
+
+.divider {
+    width: 1.5px;
+    height: 160px;
+    background-color: #ffffff;
+    opacity: 0.6;
+}
