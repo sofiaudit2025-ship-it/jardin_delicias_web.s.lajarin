@@ -12,3 +12,5 @@ function carga() {
 }
 
 window.onload = carga;
+
+
