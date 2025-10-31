@@ -420,3 +420,122 @@ nav#menu {
   letter-spacing: 1px;
   margin: 0;
 }
+
+
+
+
+
+
+
+
+
+/* PAGINA ARTISTAS */
+
+#artistas-invitados {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #000;   /* fondo negro como la página principal */
+  color: #fff;
+}
+
+#artistas-invitados h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Cuadrícula de 4 columnas */
+#artistas-invitados .grid-artistas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  gap: 40px; /* espacio entre cada figura */
+  justify-items: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada artista (figure) */
+#artistas-invitados figure {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* todos cuadrados */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Imagen dentro del cuadrado */
+#artistas-invitados img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-grow: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+#artistas-invitados figure:hover img {
+  transform: scale(1.05);
+}
+
+/* Texto debajo de la imagen */
+#artistas-invitados figcaption {
+  padding: 15px;
+  background-color: #000;
+  font-family: var(--fuente-titulos);
+  text-align: center;
+}
+
+#artistas-invitados h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#artistas-invitados p {
+  font-size: 0.9rem;
+  font-family: var(--fuente-texto);
+  color: #ccc;
+}
+
+/* --- Modal (ventana emergente) --- */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+}
+
+#modal figure {
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+#modal img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+#modal figcaption {
+  margin-top: 10px;
+  font-family: var(--fuente-titulos);
+  color: #000;
+  font-size: 1rem;
+}
