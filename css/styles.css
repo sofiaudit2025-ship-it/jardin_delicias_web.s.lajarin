@@ -431,111 +431,139 @@ nav#menu {
 
 /* PAGINA ARTISTAS */
 
-#artistas-invitados {
-  padding: 100px 40px;
-  text-align: center;
-  background-color: #000;   /* fondo negro como la página principal */
-  color: #fff;
-}
-
-#artistas-invitados h2 {
-  font-family: var(--fuente-titulos);
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Cuadrícula de 4 columnas */
-#artistas-invitados .grid-artistas {
+/* === GRID DE ARTISTAS === */
+.grid-artistas {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-  gap: 40px; /* espacio entre cada figura */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 5%;
   justify-items: center;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* Cada artista (figure) */
-#artistas-invitados figure {
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  background-color: #111;
-  border-radius: 8px;
+.grid-artistas figure {
+  position: relative;
   overflow: hidden;
-  width: 100%;
-  aspect-ratio: 1 / 1; /* todos cuadrados */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #111;
 }
 
-/* Imagen dentro del cuadrado */
-#artistas-invitados img {
+.grid-artistas figure:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.grid-artistas img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  flex-grow: 1;
-  transition: transform 0.3s ease;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Efecto al pasar el ratón */
-#artistas-invitados figure:hover img {
-  transform: scale(1.05);
+.grid-artistas figure:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
 }
 
-/* Texto debajo de la imagen */
-#artistas-invitados figcaption {
-  padding: 15px;
-  background-color: #000;
+/* Título del artista sobre la imagen */
+.grid-artistas figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  text-align: left;
+}
+
+.grid-artistas figcaption h3 {
   font-family: var(--fuente-titulos);
-  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-#artistas-invitados h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+.grid-artistas figcaption p {
+  display: none; /* solo se mostrará dentro del modal */
 }
 
-#artistas-invitados p {
-  font-size: 0.9rem;
-  font-family: var(--fuente-texto);
-  color: #ccc;
-}
-
-/* --- Modal (ventana emergente) --- */
+/* === MODAL DE ARTISTA (adaptado a tu JS) === */
 #modal {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none; /* tu JS lo cambia a flex */
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 
-#modal figure {
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
+#modal > figure {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   padding: 20px;
+  color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-#modal img {
+#modal > figure > img {
   width: 100%;
+  height: auto;
   border-radius: 6px;
+  margin-bottom: 1.2em;
+  object-fit: cover;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.6);
 }
 
-#modal figcaption {
-  margin-top: 10px;
+#modal > figure > figcaption h3 {
   font-family: var(--fuente-titulos);
-  color: #000;
+  font-size: 1.6rem;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+#modal > figure > figcaption p {
+  font-family: var(--fuente-texto);
   font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Botón cerrar */
+.btn-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-cerrar:hover {
+  transform: scale(1.2);
+  color: #ff4b4b;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
