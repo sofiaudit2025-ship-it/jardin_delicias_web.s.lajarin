@@ -80,12 +80,37 @@ nav#menu {
     gap: 30px;      /* separación entre el logo y los enlaces */
 }
 
-/* --- Botón Hamburguesa --- */
+/* Icono hamburguesa  */
 .hamburguesa {
   display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--color-texto);
+  cursor: pointer;
+  z-index: 200;
+}
+
+/*  Menú móvil  */
+.menu-movil {
+  position: fixed;
+  top: 0;
+  left: -100%; /* oculto por defecto */
+  width: 75%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: left 0.4s ease;
+  list-style: none;
+  z-index: 150;
+}
+
+.menu-movil a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
 }
 
 /* Logo */
@@ -336,14 +361,14 @@ nav#menu {
 }
 
 
-/* --- FOOTER --- */
+/*  FOOTER */
 .footer {
   color: var(--color-texto);
   padding: 100px 40px 60px;
   font-family: 'Rubik', sans-serif;
 }
 
-/* --- Parte superior: texto + Spotify --- */
+/*  Parte superior: texto + Spotify */
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -399,7 +424,7 @@ nav#menu {
   max-width: 600px;
 }
 
-/* --- Parte inferior: mapa + copy --- */
+/*  Parte inferior: mapa + copy  */
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.15);
   padding-top: 50px;
@@ -419,7 +444,7 @@ nav#menu {
   width: 100%;
   max-width: 1200px;
   border-radius: 8px;
-  filter: grayscale(30%) brightness(90%);
+  
 }
 
 /* Texto inferior */
@@ -446,7 +471,7 @@ nav#menu {
 
 
 
-/* --- Contenedor de artistas --- */
+/*  Contenedor de artistas  */
 #artistas-invitados .contenedor-artistas {
   display: flex;
   flex-wrap: wrap;
@@ -455,7 +480,7 @@ nav#menu {
   padding: 3rem 5%;
 }
 
-/* --- Cada figura (tarjeta de artista) --- */
+/*  Cada figura (tarjeta de artista)  */
 #artistas-invitados figure {
   flex: 1 1 250px;
   max-width: 300px;
@@ -465,7 +490,7 @@ nav#menu {
 }
 
 
-/* --- Imágenes uniformes --- */
+/*  Imágenes uniformes  */
 #artistas-invitados figure img {
   width: 100%;
   height: 280px;
@@ -474,12 +499,12 @@ nav#menu {
   cursor: pointer;
 }
 
-/* --- Ocultamos los textos debajo de las imágenes --- */
+/*  Ocultamos los textos debajo de las imágenes  */
 #artistas-invitados figure figcaption {
   display: none;
 }
 
-/* --- Modal --- */
+/*  Modal  */
 #modal {
   position: fixed;
   z-index: 1000;
@@ -510,16 +535,15 @@ nav#menu {
 
 
 
-/* --- Botón cerrar --- */
+/*  Botón cerrar */
 .btn-cerrar {
   position: absolute;
   top: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   font-size: 2.5rem;
   color: #fff;
   background: rgba(0, 0, 0, 0.3);
   border: none;
-  cursor: pointer;
   z-index: 2000;
   padding: 0.2em 0.4em;
   border-radius: 8px;
@@ -530,7 +554,7 @@ nav#menu {
 }
 
 
-/* --- Ocultar la imagen dentro del modal --- */
+/*  Ocultar la imagen dentro del modal  */
 #modal img {
   display: none !important;
 }
@@ -566,7 +590,7 @@ nav#menu {
 }
 
 
-/*  Tablets grandes / portátiles pequeños */
+/*  version grande */
 @media screen and (max-width: 1024px) {
   /* Menú */
   nav#menu {
@@ -591,12 +615,12 @@ nav#menu {
   }
 }
 
-/*  Tablets medianas */
+/*  version medianas */
 @media screen and (max-width: 900px) {
 
-  /* ===== MENÚ ===== */
+    /* ===== MENÚ ===== */
   nav#menu {
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .menu-contenedor {
@@ -605,17 +629,55 @@ nav#menu {
     align-items: center;
   }
 
-  /* En esta versión ocultamos el CTA y simplificamos enlaces */
-  .menu-derecha {
-    display: none;
-  }
-
-  .menu-izquierda ul {
-    gap: 12px;
+  .menu-izquierda {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .menu-izquierda h1.logo a {
     font-size: 0.9rem;
+  }
+
+  /* Enlaces principales: ocultos en móvil */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    z-index: 200;
+  }
+
+  .nav-links a {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .nav-links.activo {
+    right: 0;
+  }
+
+  /* Botón de compra oculto */
+  .menu-derecha {
+    display: none;
+  }
+
+  /* Mostrar icono hamburguesa */
+  .hamburguesa {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--color-texto);
+    z-index: 100;
   }
 
   /* ===== SECCIÓN ARTISTAS ===== */
@@ -628,7 +690,7 @@ nav#menu {
     background: url(../img/concierto_fondo.webp) center center / cover no-repeat;
     height: auto;
     min-height: 70vh;
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -643,32 +705,31 @@ nav#menu {
   }
 
   .contenido-artistas h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.2;
   }
 
   .contenido-artistas h3 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-top: 1rem;
   }
 
   .contenido-artistas h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.4;
     opacity: 0.85;
   }
 
   /* ===== INFO FESTIVAL ===== */
-   .info-festival {
+  .info-festival {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 50px 0;
     gap: 2rem;
-    position: relative;
   }
 
   .divider {
@@ -678,23 +739,20 @@ nav#menu {
   .info-item {
     width: 100%;
     padding: 1rem 0;
-    position: relative;
   }
 
-    .info-item h2 {
-    font-size: 1.4rem;
+  .info-item h2 {
+    font-size: 1.3rem;
     line-height: 1.3;
   }
 
-  
-
-  /*  MENSAJE CENTRAL  */
+  /* ===== MENSAJE ===== */
   .mensaje-festival {
     padding: 60px 20px 40px;
   }
 
   .mensaje-festival h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 1.4;
   }
 
@@ -705,8 +763,8 @@ nav#menu {
 
   .boton-entradas {
     width: 90%;
-    font-size: 1rem;
-    padding: 1rem;
+    font-size: 0.95rem;
+    padding: 0.9rem;
   }
 
   /* ===== IMAGEN INFERIOR ===== */
@@ -733,11 +791,11 @@ nav#menu {
   }
 
   .footer-texto h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   .footer-texto h2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .footer-redes {
@@ -753,143 +811,12 @@ nav#menu {
   }
 
   .footer-copy {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     line-height: 1.4;
   }
 }
 
-/*  Móviles medianos */
-@media screen and (max-width: 600px) {
-
-    nav#menu {
-    padding: 0.8rem 1.2rem;
-    }
-
-    .hamburguesa {
-    width: 26px;
-    height: 20px;
-  }
-
-  .boton-comprar {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  .menu-derecha {
-    display: block; /* sigue visible hasta 600px */
-  }
-
-    .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 75%;
-    background-color: rgba(0, 0, 0, 0.97);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: right 0.4s ease;
-    z-index: 150;
-  }
-
-    .nav-links a {
-    color: #fff;
-    font-size: 1.2rem;
-      }
-
-  .nav-links.activo {
-    right: 0;
-  }
-
-  /* HERO */
-  .artistas {
-    padding: 4rem 1rem;
-  }
-
-  .contenido-artistas h2 {
-    font-size: 1.6rem;
-  }
-
-  .contenido-artistas h3 {
-    font-size: 1.1rem;
-  }
-
-  .contenido-artistas h4 {
-    font-size: 0.95rem;
-  }
-
-   #artistas-invitados > h2 {
-    font-size: 2.5rem;   /* antes 5rem */
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* INFO */
-  .info-item h2 {
-    font-size: 1.3rem;
-  }
-
-  .mensaje-festival h2 {
-    font-size: 1.4rem;
-  }
-
-  /* BOTÓN */
-  .boton-entradas {
-    font-size: 0.95rem;
-    padding: 0.9rem;
-  }
-
-  /* FOOTER */
-  .footer-texto h1 {
-    font-size: 2.8rem;
-  }
-
-  .footer-texto h2 {
-    font-size: 0.9rem;
-  }
-
-  .footer-copy {
-    font-size: 0.7rem;
-  }
-
-  .hamburguesa {
-    display: block;
-  }
-
-  /* Oculta enlaces normales hasta que se abra el menú */
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    background-color: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: right 0.4s ease;
-    z-index: 200;
-  }
-
-  .nav-links a {
-    color: #fff;
-    font-size: 1.2rem;
-  }
-
-  .nav-links.activo {
-    right: 0;
-  }
-
-  /* Oculta el botón de compra dentro del menú */
-  .menu-derecha {
-    display: none;
-  }
-}
-
-/* Móviles pequeños */
+/* version pequeña */
 @media screen and (max-width: 420px) {
 
   .menu-izquierda h1.logo a {
