@@ -19,7 +19,24 @@ function carga() {
 
 window.onload = carga;
 
-window.onload = carga;
+/*  Abre el menú */
+function openMenu() {
+    console.log("Función openMenu");
+    // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
+    // Cambia left a 0 para que se despace hacia la derecha y sea visible
+    document.getElementById("menu").firstElementChild.lastElementChild.style.left = "0";
+}
+
+
+/*  Cierra el menú */
+function closeMenu() {
+    console.log("Función closeMenu");
+    // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
+    // Cambia left a -100% para que se desplace hacia la izquierda y no sea visible
+    document.getElementById("menu").firstElementChild.lastElementChild.style.left = "-100%";
+}
+
+
 
 
 /* Abre la ventana modal mostrando la imagen y el pie de foto del elemento figure pasado como parámetro. */
@@ -42,12 +59,4 @@ function closeModal() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
 }
-
-
-
-
-
-
-
-// tarjeta
 
