@@ -1,6 +1,8 @@
 :root {
     --fuente-titulos: 'Rubik', sans-serif;
     --fuente-texto: 'Fragment Mono', monospace;
+    --color-fondo: #000;
+    --color-texto: #fff;
 }
 
 * {
@@ -13,8 +15,8 @@
 }
 
 html, body {
-  background-color: #000;  
-  color: #fff;             
+  background-color: var(--color-fondo);  
+  color: var(--color-texto);             
   font-family: var(--fuente-texto);
   min-height: 100vh;       
 }
@@ -56,7 +58,7 @@ h2 {
 
 
 nav#menu {
-    background-color: #000000;        
+    background-color: var(--color-fondo);        
     position: sticky;              /* el menú se queda fijo arriba al hacer scroll */
     top: 0;
     z-index: 100;                  /* se asegura de quedar por encima del resto */
@@ -83,7 +85,7 @@ nav#menu {
     font-family: 'Rubik', sans-serif; 
     font-size: 1em;
     text-decoration:none;            
-    color: #ffffff;
+    color: var(--color-texto);
     font-weight: 800;
     letter-spacing: 0.2px; 
        
@@ -144,7 +146,7 @@ nav#menu {
     font-family: var(--fuente-titulos);
     text-align: center;
     text-transform: uppercase;
-    color: #fff;
+    color:var(--color-texto);
     z-index: 1;
 }
 /*  Video de fondo  */
@@ -161,7 +163,7 @@ nav#menu {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #fff;
+    color: var(--color-texto);
     z-index: 2;
     width: 90%;
 }
@@ -205,7 +207,7 @@ nav#menu {
     gap: 40px;
     position: relative;
     z-index: 3;
-    color: #fff;
+    color: var(--color-texto);
 }
 
 .info-item {
@@ -218,7 +220,7 @@ nav#menu {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #ffffff;
+    color:var(--color-texto);
     margin-bottom: 10px;
     opacity: 0.8;
 }
@@ -229,7 +231,7 @@ nav#menu {
     font-weight: 700;
     line-height: 1.3;
     margin: 0;
-    color: #ffffff;
+    color: var(--color-texto);
 }
 
 .divider {
@@ -242,7 +244,7 @@ nav#menu {
 
 /*--Mensaje festival parte inferior--*/
 .mensaje-festival {
-  color: #fff;
+  color: var(--color-texto);
   text-align: center;
   padding: 80px 20px 40px;
 }
@@ -267,7 +269,7 @@ nav#menu {
   width: 90%;
   max-width: 1300px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--color-texto);
   color: #000;
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
@@ -310,7 +312,7 @@ nav#menu {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #000;
+  background-color: var(--color-fondo);
   margin: -2px 0 80px;
 }
 
@@ -328,7 +330,7 @@ nav#menu {
 
 /* --- FOOTER --- */
 .footer {
-    color: #fff;
+  color: var(--color-texto);
   padding: 100px 40px 60px;
   font-family: 'Rubik', sans-serif;
 }
@@ -357,7 +359,7 @@ nav#menu {
   font-weight: 400;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  color: #fff;
+  color: var(--color-texto);
   opacity: 0.9;
 }
 
@@ -369,7 +371,7 @@ nav#menu {
   line-height: 1.1;
   margin-bottom: 15px;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--color-texto);
   line-height: 0.85;
 }
 
@@ -422,76 +424,54 @@ nav#menu {
 }
 
 
+/* PAGINA ARTISTAS*/
+
+#artistas-invitados > h2 {
+  font-size: 5rem;          /* tamaño más grande */
+  text-align: center;
+  font-weight: 900;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase; /* opcional, por estética */
+}
 
 
 
-
-
-
-
-/* PAGINA ARTISTAS */
-
-/* === GRID DE ARTISTAS === */
-.grid-artistas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* --- Contenedor de artistas --- */
+#artistas-invitados .contenedor-artistas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   padding: 3rem 5%;
-  justify-items: center;
 }
 
-.grid-artistas figure {
-  position: relative;
-  overflow: hidden;
+/* --- Cada figura (tarjeta de artista) --- */
+#artistas-invitados figure {
+  flex: 1 1 250px;
+  max-width: 300px;
   border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #111;
+  overflow: hidden;
+  text-align: center;
 }
 
-.grid-artistas figure:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
 
-.grid-artistas img {
+/* --- Imágenes uniformes --- */
+#artistas-invitados figure img {
   width: 100%;
-  height: 100%;
+  height: 280px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
 }
 
-.grid-artistas figure:hover img {
-  transform: scale(1.1);
-  filter: brightness(0.8);
+/* --- Ocultamos los textos debajo de las imágenes --- */
+#artistas-invitados figure figcaption {
+  display: none;
 }
 
-/* Título del artista sobre la imagen */
-.grid-artistas figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  text-align: left;
-}
-
-.grid-artistas figcaption h3 {
-  font-family: var(--fuente-titulos);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.grid-artistas figcaption p {
-  display: none; /* solo se mostrará dentro del modal */
-}
-
-/* === MODAL DE ARTISTA (adaptado a tu JS) === */
+/* --- Modal --- */
 #modal {
   position: fixed;
   z-index: 1000;
@@ -499,71 +479,80 @@ nav#menu {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: none; /* tu JS lo cambia a flex */
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(4px);
+  text-align: center;
 }
 
-#modal > figure {
-  width: 90%;
-  max-width: 800px;
+/* Contenido del modal */
+#modal figure {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
-  background-color: #000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  color: #fff;
-  animation: fadeIn 0.3s ease-in-out;
+  max-width: 700px;
 }
 
-#modal > figure > img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 1.2em;
-  object-fit: cover;
-  box-shadow: 0 4px 25px rgba(0,0,0,0.6);
-}
 
-#modal > figure > figcaption h3 {
-  font-family: var(--fuente-titulos);
-  font-size: 1.6rem;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-}
 
-#modal > figure > figcaption p {
-  font-family: var(--fuente-texto);
-  font-size: 1rem;
-  color: #ddd;
-  line-height: 1.6;
-}
-
-/* Botón cerrar */
+/* --- Botón cerrar --- */
 .btn-cerrar {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  background: transparent;
-  border: none;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
   color: #fff;
-  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  z-index: 2000;
+  padding: 0.2em 0.4em;
+  border-radius: 8px;
 }
 
 .btn-cerrar:hover {
-  transform: scale(1.2);
-  color: #ff4b4b;
+  color: #ffffff;
 }
 
-/* Animación de aparición */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+
+/* --- Ocultar la imagen dentro del modal --- */
+#modal img {
+  display: none !important;
+}
+
+
+  
+/* Dentro del modal SÍ se muestran */
+#modal figcaption {
+  display: block !important;
+  color: var(--color-texto);
+  font-family: 'Fragment Mono', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+
+/* Nombre del artista dentro del modal */
+#modal figcaption h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  
+}
+
+/* Descripción dentro del modal */
+#modal figcaption p {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 1rem;
+  color: var(--color-texto);
 }
