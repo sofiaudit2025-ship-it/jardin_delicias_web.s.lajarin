@@ -42,3 +42,12 @@ function closeModal() {
     var modal = document.getElementById("modal");
     modal.style.display = "none";
 }
+
+
+
+
+
+
+
+// tarjeta
+
