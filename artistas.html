@@ -9,38 +9,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- FALTA FAVICON Y FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body> 
-<nav id="menu">
-    <!-- Menú general -->
+ <nav id="menu">
     <div class="menu-contenedor">
+      <!-- Bloque izquierdo -->
+      <div class="menu-izquierda">
+        <h1 class="logo">
+          <a href="index.html">ALDEA SONORA</a>
+        </h1>
 
-        <!-- Logo + enlaces principales -->
-        <div class="menu-izquierda">
-            <!-- Logo que también lleva al inicio -->
-            <h1 class="logo">
-                <a href="index.html"> ALDEA SONORA</a>
-            </h1>
+        <!-- Menú principal (añadido) -->
+        <ul class="nav-links">
+          <li><a href="artistas.html">Artistas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
 
-            <!-- Enlaces principales al lado del logo -->
-            <ul class="nav-links">
-                <li><a href="artistas.html">Artistas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </div>
+      <!-- Bloque derecho (botón entradas) -->
+      <div class="menu-derecha">
+        <a href="compra.html" class="boton-comprar">Comprar entradas</a>
+      </div>
 
-        <!-- Botón de CTA- compra entradas (derecha) -->
-        <div class="menu-derecha">
-            <a href="compra.html" class="boton-comprar">Comprar entradas</a>
-        </div>
+      <!-- Icono hamburguesa -->
+      <i class="fas fa-bars hamburguesa" onclick="openMenu()"></i>
 
+      <!-- Menú móvil lateral -->
+      <ul class="menu-movil">
+        <!-- Botón cerrar -->
+        <button class="btn-cerrar" onclick="closeMenu()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Enlaces del menú móvil -->
+        <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
+        <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
 
 <section id="artistas-invitados">
