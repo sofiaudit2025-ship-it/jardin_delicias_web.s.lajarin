@@ -42,9 +42,11 @@
       <!-- Menú móvil lateral -->
       <ul class="menu-movil">
         <!-- Botón cerrar -->
-        <button class="btn-cerrar" onclick="closeMenu()">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+  <li>
+    <button class="btn-cerrar" onclick="closeMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </li>
 
         <!-- Enlaces del menú móvil -->
         <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
@@ -109,7 +111,7 @@
     </figure>
 
     <figure onclick="openModal(this)">
-        <img src="img/arde bogota.webp" alt="">
+        <img src="img/arde_bogota.webp" alt="">
         <figcaption>
           <h3>Arde Bogotá</h3>
           <p>Grupo emergente con energía, letras directas y actitud que conecta con el público joven. A pesar de su reciente tiempo entre los éxitos españoles destacan canciones como "La salvación" o "Los perros".</p>
@@ -141,7 +143,7 @@
     </figure>
 
     <figure onclick="openModal(this)">
-        <img src="img/hey kid.webp" alt="">
+        <img src="img/hey_kid.webp" alt="">
         <figcaption>
           <h3>Hey Kid</h3>
           <p>Artista que fusiona pop, electrónica y tonos urbanos, generando una propuesta fresca, directa y con identidad propia. Con rpopuestas como "Saber de tí" o "Noche de San Juan".</p>
@@ -198,7 +200,7 @@
     </figure>
 
     <figure onclick="openModal(this)">
-        <img src="img/lola tuduri.webp" alt="">
+        <img src="img/lola_tuduri.webp" alt="">
         <figcaption>
           <h3>Lola Tuduri</h3>
           <p>Voz femenina fuerte con personalidad propia, que apuesta por lo auténtico, la emoción directa y un estilo que deja huella. Destacando su obra "Entre las vías".</p>
@@ -222,7 +224,7 @@
     </figure>
 
     <figure onclick="openModal(this)">
-        <img src="img/michael foster.webp" alt="">
+        <img src="img/michael_foster.webp" alt="">
         <figcaption>
           <h3>Michael Foster</h3>
           <p>Artista con amplio rango estilístico, capaz de transitar entre géneros y generar canciones potentes que se escuchan con atención como "Sinatra".</p>
@@ -230,7 +232,7 @@
     </figure>
 
     <figure onclick="openModal(this)">
-        <img src="img/luis fercan.webp" alt="">
+        <img src="img/luis_fercan.webp" alt="">
         <figcaption>
           <h3>Luis Fercán</h3>
           <p>Su voz rasgada y letras cargadas de emoción lo han convertido en una de las revelaciones de autor en España como "110".</p>
@@ -239,7 +241,7 @@
 
 
     <figure onclick="openModal(this)">
-        <img src="img/marina reche.webp" alt="">
+        <img src="img/marina_reche.webp" alt="">
         <figcaption>
           <h3>Marina Reche</h3>
           <p>Voz personal y potente, melodías que se quedan y letras que importan: una de las revelaciones de la escena actual como "Mil preguntas".</p>
@@ -261,10 +263,12 @@
           <p>Cantautora con un aire fresco, mucha personalidad y con ganas de explorar todo lo que la música pueda ofrecerle. Destaca por obras como "Me presento".</p>
         </figcaption>
     </figure>
+    </div>
+    </section>
 
     
 
-    </div>
+    
 
 <div id="modal" onclick="if(event.target===this) closeModal()">
   <button class="btn-cerrar" aria-label="Cerrar" onclick="closeModal()">✕</button>
@@ -283,13 +287,8 @@
       <p class="footer-redes">@aldeasonora.festival</p>
     </div>
 
-    <div class="footer-spotify">
-      <iframe data-testid="embed-iframe" style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0"
-        width="100%" height="352" frameBorder="0" allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
+   <div class="footer-spotify">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="575" height="400" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
