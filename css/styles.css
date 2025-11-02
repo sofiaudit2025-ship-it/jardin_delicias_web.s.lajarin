@@ -236,16 +236,33 @@ nav#menu {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 0;
-    gap: 40px;
+    padding: 100px 10%;
+    gap: 60px;
     position: relative;
     z-index: 3;
     color: var(--color-texto);
 }
 
 .info-item {
-    flex: 1;
+  flex: 1;
+  text-align: center;
 }
+
+.info-item-entradas {
+  flex: 1;
+  text-align: left;
+}
+
+.label-index {
+    display: block;
+    font-family: 'Fragment Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:var(--color-texto);
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
 
 .label {
     display: block;
@@ -256,7 +273,8 @@ nav#menu {
     color:var(--color-texto);
     margin-bottom: 10px;
     opacity: 0.8;
-}
+    text-align: left;
+  }
 
 .info-item h2 {
     font-family: 'Rubik', sans-serif;
@@ -272,9 +290,10 @@ nav#menu {
     font-size: 30px;
     font-weight: 800;
     line-height: 1.3;
-    margin: 0;
     color: var(--color-texto);
+    margin-left: 4px;
     text-align: left;
+
 }
 
 .info-item p {
@@ -286,13 +305,19 @@ nav#menu {
   text-align: left;
 }
 
-.divider {
+.divider-index {
     width: 1.5px;
-    height: 160px;
+    height: 180px;
     background-color: #ffffff;
     opacity: 0.6;
 }
 
+.divider {
+    width: 1.5px;
+    height: 300px;
+    background-color: #ffffff;
+    opacity: 0.6;
+}
 
 /*--Mensaje festival parte inferior--*/
 .mensaje-festival {
@@ -750,7 +775,7 @@ nav#menu {
     opacity: 0.85;
   }
 
-  /* ===== INFO FESTIVAL ===== */
+  /* INFO FESTIVAL  */
   .info-festival {
     flex-direction: column;
     align-items: center;
@@ -773,7 +798,7 @@ nav#menu {
     line-height: 1.3;
   }
 
-  /* ===== MENSAJE ===== */
+  /* MENSAJE */
   .mensaje-festival {
     padding: 60px 20px 40px;
   }
@@ -783,7 +808,7 @@ nav#menu {
     line-height: 1.4;
   }
 
-  /* ===== BOTÓN PRINCIPAL ===== */
+  /* BOTÓN PRINCIPAL */
   .boton-big-entradas {
     padding: 40px 20px;
   }
@@ -794,7 +819,7 @@ nav#menu {
     padding: 0.9rem;
   }
 
-  /* ===== IMAGEN INFERIOR ===== */
+  /* IMAGEN INFERIOR*/
   .bloque-imagen {
     margin: 40px 0;
   }
@@ -805,7 +830,7 @@ nav#menu {
     border-radius: 0;
   }
 
-  /* ===== FOOTER ===== */
+  /* FOOTER */
   .footer {
     padding: 60px 20px;
   }
