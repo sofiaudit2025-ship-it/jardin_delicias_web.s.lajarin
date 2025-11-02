@@ -267,6 +267,25 @@ nav#menu {
     color: var(--color-texto);
 }
 
+.info-item h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0;
+    color: var(--color-texto);
+    text-align: left;
+}
+
+.info-item p {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  opacity: 0.85;
+  text-align: left;
+}
+
 .divider {
     width: 1.5px;
     height: 160px;
@@ -618,7 +637,7 @@ nav#menu {
 /*  version medianas */
 @media screen and (max-width: 900px) {
 
-    /* ===== MENÚ ===== */
+    /*  MENÚ  */
   nav#menu {
     padding: 0.8rem 1.2rem;
   }
@@ -638,6 +657,14 @@ nav#menu {
 
   .menu-izquierda h1.logo a {
     font-size: 0.9rem;
+  }
+
+    .menu-contenedor {
+    justify-content: flex-start;
+  }
+
+  .hamburguesa {
+    margin-left: auto; /* la empuja al extremo derecho */
   }
 
   /* Enlaces principales: ocultos en móvil */
@@ -680,7 +707,7 @@ nav#menu {
     z-index: 100;
   }
 
-  /* ===== SECCIÓN ARTISTAS ===== */
+  /*  SECCIÓN ARTISTAS */
   .video-fondo {
     display: none;
   }
