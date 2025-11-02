@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
- 
+  
 <body> 
  <nav id="menu">
     <div class="menu-contenedor">
@@ -56,16 +56,53 @@
     </div>
   </nav>
 
+<section class="formulario-entradas" id="entradas">
+  <h2>Compra tus entradas</h2>
+
+  <form onsubmit="return comprar()">
+    <label class="label" for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+    <label class="label" for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+
+    <label class="label" for="actividad">Tipo de entrada:</label>
+    <select id="actividad" onchange="costeTotal()" required>
+      <option value="">Selecciona una opción</option>
+      <option value="normal">Normal - 65 €</option>
+      <option value="premium">Premium - 110 €</option>
+      <option value="vip">VIP - 180 €</option>
+    </select>
+
+    <label class="label" for="numero">Número de entradas:</label>
+    <input type="number" id="numero" min="1" max="6" placeholder="Ej. 2" onchange="costeTotal()" required>
+
+    <p class="resumen-coste">Coste total: <span id="coste">0 €</span></p>
+
+    <button type="submit" class="boton-enviar">Comprar entradas</button>
+  </form>
+</section>
+
+<div id="modal-confirmacion" class="modal-confirmacion">
+  <div class="modal-contenido">
+    <h2>COMPRA REALIZADA CON ÉXITO</h2>
+    <p>Gracias por tu compra, <strong id="nombreModal"></strong>!</p>
+    <ul>
+      <li><span>Correo:</span> <strong id="correoModal"></strong></li>
+      <li><span>Tipo de entrada:</span> <strong id="tipoModal"></strong></li>
+      <li><span>Número de entradas:</span> <strong id="cantidadModal"></strong></li>
+      <li><span>Total:</span> <strong id="totalModal"></strong></li>
+    </ul>
+    <button class="boton-cerrar" onclick="cerrarModalCompra()">Cerrar</button>
+  </div>
+</div>
+
 <footer class="footer">
 
 
   <div class="footer-bottom">
     <div class="footer-mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11687.758139876569!2d-2.652492837087867!3d41.06660269147487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43451448b54a53%3A0x965b94eedaf268de!2s19250%20Sig%C3%BCenza%2C%20Guadalajara!5e1!3m2!1ses!2ses!4v1761903532318!5m2!1ses!2ses"
-        width="1200" height="200" style="border:0;" allowfullscreen=""
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+      
     </div>
 
     <p class="footer-copy">
