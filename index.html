@@ -47,11 +47,12 @@
 
       <!-- Menú móvil lateral -->
       <ul class="menu-movil">
-        <!-- Botón cerrar -->
-        <button class="btn-cerrar" onclick="closeMenu()">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-
+  <!-- Botón cerrar -->
+  <li>
+    <button class="btn-cerrar" onclick="closeMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </li>
         <!-- Enlaces del menú móvil -->
         <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
         <li><a href="entradas.html" onclick="closeMenu()">Entradas</a></li>
@@ -100,15 +101,16 @@
 </section>
 
 <section class="boton-big-entradas">
+  <h2 class="sr-only">Compra tus entradas</h2> <!-- oculto para lectores de pantalla -->
   <a href="compra.html" class="boton-entradas">
-     TUS ENTRADAS YA DISPONIBLES
+    TUS ENTRADAS YA DISPONIBLES
   </a>
 </section>
 
 <section class="bloque-imagen">
+  <h2 class="sr-only">Imagen promocional del festival</h2>
   <img src="img/home_foto.jpg" alt="Foto concierto Aldea Sonora">
 </section>
-
 
 
 
@@ -121,7 +123,7 @@
     </div>
 
    <div class="footer-spotify">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="575" height="400" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
