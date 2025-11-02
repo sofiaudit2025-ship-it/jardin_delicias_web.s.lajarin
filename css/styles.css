@@ -80,38 +80,11 @@ nav#menu {
     gap: 30px;      /* separación entre el logo y los enlaces */
 }
 
-/* Icono hamburguesa  */
-.hamburguesa {
-  display: none ; 
-  font-size: 1.8rem;
-  color: var(--color-texto);
-  cursor: pointer;
-  z-index: 200;
-}
 
-/*  Menú móvil  */
-.menu-movil {
-  position: fixed;
-  top: 0;
-  left: -100%; /* oculto por defecto */
-  width: 75%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  transition: left 0.4s ease;
-  list-style: none;
-  z-index: 150;
-}
 
-.menu-movil a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.4rem;
-}
+
+
+
 
 /* Logo */
 .logo a {
@@ -445,7 +418,7 @@ nav#menu {
 .footer-texto h1 {
   font-family: 'Rubik', sans-serif;
   font-weight: 900;
-  font-size: 6rem;
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 15px;
   letter-spacing: 1px;
@@ -805,6 +778,65 @@ nav#menu {
 }
 
 
+/* === MENÚ HAMBURGUESA RESPONSIVE === */
+
+/* Icono hamburguesa */
+.hamburguesa {
+  display: none;
+  font-size: 2rem;
+  color: var(--color-texto);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* Menú móvil (oculto por defecto) */
+.menu-movil {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 150;
+}
+
+.menu-movil a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.2s ease;
+}
+
+.menu-movil a:hover {
+  color: #ccc;
+}
+
+/* Botón cerrar dentro del menú */
+.btn-cerrar {
+  position: absolute;
+  top: 1.2rem;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estado visible */
+.menu-movil.activo {
+  left: 0;
+}
+
+
 @media screen and (max-width: 1024px) {
 
   .contenido-artistas h2 {
@@ -817,106 +849,7 @@ nav#menu {
 
 }
 
-@media screen and (max-width: 800px) {
 
-   Menú principal
-  nav#menu {
-    padding: 0.8rem 1.2rem;
-  }
-
-  .menu-contenedor {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .menu-izquierda {
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 15px;
-  }
-
-  .menu-izquierda h1.logo a {
-    font-size: 0.9rem;
-  }
-
-
-  .hamburguesa {
-    display: none;
-  }
-
-  .nav-links,
-  .menu-derecha {
-    display: none !important;
-  }
-
-  /* Menú móvil lateral */
-  .menu-movil {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 75%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: left 0.4s ease;
-    list-style: none;
-    z-index: 150;
-  }
-
-  .menu-movil a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.3rem;
-  }
-
-  .menu-movil.activo {
-    left: 0;
-  }*/
-
-  /* Ajustes visuales generales */
-  .contenido-artistas h2 {
-    font-size: 1.6rem;
-  }
-
-  .contenido-artistas h3 {
-    font-size: 1.1rem;
-  }
-
-  .info-festival {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px 0;
-    gap: 2rem;
-  }
-
-  .divider {
-    display: none;
-  }
-
-  .mensaje-festival h2 {
-    font-size: 1.4rem;
-  }
-
-  .footer {
-    padding: 60px 20px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-  }
-}
 
 /*    VERSION PEQUEÑA (menos de 420px)  */ 
 @media screen and (max-width: 420px) {
@@ -966,47 +899,17 @@ nav#menu {
   .footer-copy {
     font-size: 0.65rem;
   }
-}*/
-
-
-/* ---- Estado general (pantalla grande) ---- */
-.hamburguesa {
-  display: none;
-  font-size: 1.8rem;
-  color: var(--color-texto);
-  cursor: pointer;
-  z-index: 200;
 }
 
-/* Menú móvil oculto fuera de la pantalla */
-.menu-movil {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 75%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  transition: left 0.4s ease;
-  list-style: none;
-  z-index: 150;
-}
 
-/* Estado visible del menú móvil */
-.menu-movil.activo {
-  left: 0;
-}
 
-/* ---- MODO MÓVIL (<= 800px) ---- */
-@media screen and (max-width: 800px) {
-  /* Mostrar icono hamburguesa */
-  .hamburguesa {
-    display: block;
-  }
+
+
+
+
+
+@media screen and (max-width: 820px) {
+
 
   /* Ocultar menú de escritorio */
   .nav-links,
@@ -1027,22 +930,15 @@ nav#menu {
     justify-content: space-between;
   }
 
-  /* Estilos del menú lateral móvil */
-  .menu-movil a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.3rem;
+  /* Mostrar icono hamburguesa en móvil */
+  .hamburguesa {
+    display: block;
   }
 
-  .btn-cerrar {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
+  /* Ocultar menú de escritorio */
+  .nav-links,
+  .menu-derecha {
+    display: none;
   }
+
 }
-
