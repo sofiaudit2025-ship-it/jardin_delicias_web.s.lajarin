@@ -42,10 +42,11 @@
 
       <!-- Menú móvil lateral -->
       <ul class="menu-movil">
-        <!-- Botón cerrar -->
-        <button class="btn-cerrar" onclick="closeMenu()">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+  <li>
+    <button class="btn-cerrar" onclick="closeMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </li>
 
         <!-- Enlaces del menú móvil -->
         <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
@@ -56,25 +57,27 @@
   </nav>
 
 <section class="info-festival">
-  <div class="info-item">
+  <div class="info-item-entradas">
     <span class="label">ENTRADA</span>
     <h3>NORMAL<br>65 €</h3>
     <p>
-      · Acceso a los 2 días del festival<br>
-      · Zona general frente al escenario<br>
-      · Food trucks y mercado artesanal<br>
+      <br>
+      · Acceso los 2 días<br>
+      · Zona general <br>
+      · Food trucks y puestos<br>
       · Transporte lanzadera desde Sigüenza<br>
-      · Pulsera conmemorativa básica
+      · Pulsera conmemorativa
     </p>
   </div>
 
   <div class="divider"></div>
 
-  <div class="info-item">
+  <div class="info-item-entradas">
     <span class="label">ENTRADA</span>
     <h3>PREMIUM<br>110 €</h3>
     <p>
-      · Todo lo de la Normal<br>
+      <br>
+      · Incluye todo lo de la Normal<br>
       · Zona preferente más cercana<br>
       · Entrada al recinto 1h antes<br>
       · 10% descuento en bebidas<br>
@@ -85,11 +88,12 @@
 
   <div class="divider"></div>
 
-  <div class="info-item">
+  <div class="info-item-entradas">
     <span class="label">ENTRADA</span>
     <h3>VIP<br>180 €</h3>
     <p>
-      · Todo lo de la Premium<br>
+      <br>
+      · Incluye todo lo de la Premium<br>
       · Acceso al lounge backstage<br>
       · Parking VIP junto al recinto<br>
       · Pack de merchandising oficial<br>
@@ -99,8 +103,29 @@
   </div>
 </section>
 
+<section class="boton-big-entradas">
+  <h2 class="sr-only">Compra tus entradas</h2> <!-- oculto para lectores de pantalla -->
+  <a href="compra.html" class="boton-entradas">
+    TUS ENTRADAS YA DISPONIBLES
+  </a>
+</section>
+
+
+
 
 <footer class="footer">
+
+    <div class="footer-top">
+    <div class="footer-texto">
+      <h2>Escucha la playlist oficial de</h2>
+      <h1>ALDEA <br>SONORA</h1>
+      <p class="footer-redes">@aldeasonora.festival</p>
+    </div>
+
+   <div class="footer-spotify">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="575" height="400" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
 
 
   <div class="footer-bottom">
