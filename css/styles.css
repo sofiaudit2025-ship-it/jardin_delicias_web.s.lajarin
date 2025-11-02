@@ -82,7 +82,7 @@ nav#menu {
 
 /* Icono hamburguesa  */
 .hamburguesa {
-  display: none;
+  display: none ; 
   font-size: 1.8rem;
   color: var(--color-texto);
   cursor: pointer;
@@ -97,7 +97,7 @@ nav#menu {
   width: 75%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -248,6 +248,7 @@ nav#menu {
   text-align: center;
 }
 
+
 .info-item-entradas {
   flex: 1;
   text-align: left;
@@ -285,11 +286,11 @@ nav#menu {
     color: var(--color-texto);
 }
 
-.info-item h3 {
+.info-item-entradas h3 {
     font-family: 'Rubik', sans-serif;
     font-size: 30px;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1;
     color: var(--color-texto);
     margin-left: 4px;
     text-align: left;
@@ -634,21 +635,177 @@ nav#menu {
 }
 
 
-/*  version grande */
+
+.menu-movil {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: left 0.4s ease;
+  list-style: none;
+  z-index: 150;
+}
+
+.menu-movil a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.menu-movil.activo {
+  left: 0;
+}
+
+/*  FORMULARIO DE ENTRADAS */
+
+.formulario-entradas {
+  width: 100%;
+  max-width: 600px;
+  margin: 6rem auto;
+  padding: 3rem 2rem;
+  background-color:var(--color-fondo);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.formulario-entradas h2 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-texto);
+}
+
+.formulario-entradas form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formulario-entradas input,
+.formulario-entradas select {
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: transparent;
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.formulario-entradas input:focus,
+.formulario-entradas select:focus {
+  border-color: #fff;
+}
+
+
+.formulario-entradas select option {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+.resumen-coste {
+  font-size: 1rem;
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  text-align: right;
+}
+
+.boton-enviar {
+  background-color: var(--color-texto);
+  color:var(--color-fondo);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-enviar:hover {
+  background-color: #d8d8d8ef;
+  transform: translateY(-2px);
+}
+
+/*  MODAL DE CONFIRMACIÓN */
+.modal-confirmacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.modal-contenido {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.modal-contenido h2 {
+  font-family: var(--fuente-titulos);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.modal-contenido ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.modal-contenido li {
+  margin: 0.4rem 0;
+  font-family: var(--fuente-texto);
+  font-weight: 200;
+}
+
+.modal-contenido span {
+  opacity: 0.8;
+  font-weight: 800;
+}
+
+.boton-cerrar {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-cerrar:hover {
+  background-color: #a2a2a2;
+  transform: translateY(-2px);
+}
+
+
 @media screen and (max-width: 1024px) {
-  /* Menú */
-  nav#menu {
-    padding: 0.8rem 1.2rem;
-  }
-
-  .nav-links a {
-    font-size: 0.95rem;
-  }
-
-  .boton-comprar {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
 
   .contenido-artistas h2 {
     font-size: 2.8rem;
@@ -657,12 +814,12 @@ nav#menu {
   .contenido-artistas h3 {
     font-size: 1.8rem;
   }
+
 }
 
-/*  version medianas */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
 
-    /*  MENÚ  */
+   Menú principal
   nav#menu {
     padding: 0.8rem 1.2rem;
   }
@@ -671,111 +828,68 @@ nav#menu {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
   }
 
   .menu-izquierda {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 15px;
   }
 
   .menu-izquierda h1.logo a {
     font-size: 0.9rem;
   }
 
-    .menu-contenedor {
-    justify-content: flex-start;
-  }
 
   .hamburguesa {
-    margin-left: auto; /* la empuja al extremo derecho */
+    display: none;
   }
 
-  /* Enlaces principales: ocultos en móvil */
-  .nav-links {
+  .nav-links,
+  .menu-derecha {
+    display: none !important;
+  }
+
+  /* Menú móvil lateral */
+  .menu-movil {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: -100%;
+    width: 75%;
     height: 100vh;
-    width: 70%;
     background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    transition: right 0.4s ease;
-    z-index: 200;
+    transition: left 0.4s ease;
+    list-style: none;
+    z-index: 150;
   }
 
-  .nav-links a {
-    color: var(--color-texto);
-    font-size: 1.2rem;
+  .menu-movil a {
     text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
   }
 
-  .nav-links.activo {
-    right: 0;
-  }
+  .menu-movil.activo {
+    left: 0;
+  }*/
 
-  /* Botón de compra oculto */
-  .menu-derecha {
-    display: none;
-  }
-
-  /* Mostrar icono hamburguesa */
-  .hamburguesa {
-    display: block;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--color-texto);
-    z-index: 100;
-  }
-
-  /*  SECCIÓN ARTISTAS */
-  .video-fondo {
-    display: none;
-  }
-
-  .artistas {
-    position: relative;
-    background: url(../img/concierto_fondo.webp) center center / cover no-repeat;
-    height: auto;
-    min-height: 70vh;
-    padding: 4rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contenido-artistas {
-    position: static;
-    transform: none;
-    width: 100%;
-    color: var(--color-texto);
-  }
-
+  /* Ajustes visuales generales */
   .contenido-artistas h2 {
     font-size: 1.6rem;
-    font-weight: 800;
-    line-height: 1.2;
   }
 
   .contenido-artistas h3 {
     font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 1rem;
   }
 
-  .contenido-artistas h4 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.4;
-    opacity: 0.85;
-  }
-
-  /* INFO FESTIVAL  */
   .info-festival {
     flex-direction: column;
     align-items: center;
@@ -788,49 +902,10 @@ nav#menu {
     display: none;
   }
 
-  .info-item {
-    width: 100%;
-    padding: 1rem 0;
-  }
-
-  .info-item h2 {
-    font-size: 1.3rem;
-    line-height: 1.3;
-  }
-
-  /* MENSAJE */
-  .mensaje-festival {
-    padding: 60px 20px 40px;
-  }
-
   .mensaje-festival h2 {
     font-size: 1.4rem;
-    line-height: 1.4;
   }
 
-  /* BOTÓN PRINCIPAL */
-  .boton-big-entradas {
-    padding: 40px 20px;
-  }
-
-  .boton-entradas {
-    width: 90%;
-    font-size: 0.95rem;
-    padding: 0.9rem;
-  }
-
-  /* IMAGEN INFERIOR*/
-  .bloque-imagen {
-    margin: 40px 0;
-  }
-
-  .bloque-imagen img {
-    width: 100%;
-    max-height: 160px;
-    border-radius: 0;
-  }
-
-  /* FOOTER */
   .footer {
     padding: 60px 20px;
   }
@@ -841,39 +916,14 @@ nav#menu {
     text-align: center;
     gap: 2rem;
   }
-
-  .footer-texto h1 {
-    font-size: 2.8rem;
-  }
-
-  .footer-texto h2 {
-    font-size: 0.9rem;
-  }
-
-  .footer-redes {
-    font-size: 0.9rem;
-  }
-
-  .footer-spotify {
-    width: 100%;
-  }
-
-  .footer-mapa iframe {
-    height: 180px;
-  }
-
-  .footer-copy {
-    font-size: 0.7rem;
-    line-height: 1.4;
-  }
 }
 
-/* version pequeña */
+/*    VERSION PEQUEÑA (menos de 420px)  */ 
 @media screen and (max-width: 420px) {
-
   .menu-izquierda h1.logo a {
     font-size: 0.8rem;
   }
+
 
   .artistas {
     padding: 3rem 1rem;
@@ -888,7 +938,7 @@ nav#menu {
   }
 
   .contenido-artistas h4 {
-    display: none; /* evitamos bloques largos de texto */
+    display: none;
   }
 
   #artistas-invitados > h2 {
@@ -916,4 +966,83 @@ nav#menu {
   .footer-copy {
     font-size: 0.65rem;
   }
+}*/
+
+
+/* ---- Estado general (pantalla grande) ---- */
+.hamburguesa {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  cursor: pointer;
+  z-index: 200;
 }
+
+/* Menú móvil oculto fuera de la pantalla */
+.menu-movil {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: left 0.4s ease;
+  list-style: none;
+  z-index: 150;
+}
+
+/* Estado visible del menú móvil */
+.menu-movil.activo {
+  left: 0;
+}
+
+/* ---- MODO MÓVIL (<= 800px) ---- */
+@media screen and (max-width: 800px) {
+  /* Mostrar icono hamburguesa */
+  .hamburguesa {
+    display: block;
+  }
+
+  /* Ocultar menú de escritorio */
+  .nav-links,
+  .menu-derecha {
+    display: none;
+  }
+
+  /* Asegurar que el contenedor se alinea correctamente */
+  .menu-contenedor {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-izquierda {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Estilos del menú lateral móvil */
+  .menu-movil a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+
+  .btn-cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
