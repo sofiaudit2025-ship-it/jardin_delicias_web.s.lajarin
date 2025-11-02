@@ -21,19 +21,14 @@ window.onload = carga;
 
 /*  Abre el menú */
 function openMenu() {
-    console.log("Función openMenu");
-    // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
-    // Cambia left a 0 para que se despace hacia la derecha y sea visible
-    document.getElementById("menu").firstElementChild.lastElementChild.style.left = "0";
+  document.querySelector(".menu-movil").classList.add("activo");
+  document.body.style.overflow = "hidden"; // evita scroll detrás
 }
 
-
-/*  Cierra el menú */
+/*cierra el menu*/
 function closeMenu() {
-    console.log("Función closeMenu");
-    // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
-    // Cambia left a -100% para que se desplace hacia la izquierda y no sea visible
-    document.getElementById("menu").firstElementChild.lastElementChild.style.left = "-100%";
+  document.querySelector(".menu-movil").classList.remove("activo");
+  document.body.style.overflow = "";
 }
 
 
@@ -60,3 +55,54 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+// Calcular el coste total según tipo y cantidad
+function costeTotal() {
+    const numero = parseInt(document.getElementById("numero").value) || 0;
+    const tipo = document.getElementById("actividad").value;
+
+    let precio = 0;
+    switch (tipo) {
+        case "normal":
+            precio = 65;
+            break;
+        case "premium":
+            precio = 110;
+            break;
+        case "vip":
+            precio = 180;
+            break;
+    }
+
+    const total = numero * precio;
+    document.getElementById("coste").innerHTML = total > 0 ? `${total} €` : "";
+}
+
+// Mostrar ventana modal con datos de compra
+function comprar() {
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const tipo = document.getElementById("actividad").value;
+    const entradas = parseInt(document.getElementById("numero").value);
+    const coste = document.getElementById("coste").innerText;
+
+    if (!nombre || !correo || !tipo || !entradas) {
+        alert("Por favor, rellena todos los campos correctamente.");
+        return false;
+    }
+
+    // Llenamos los datos en la ventana modal
+    document.getElementById("nombreModal").textContent = nombre;
+    document.getElementById("correoModal").textContent = correo;
+    document.getElementById("tipoModal").textContent = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+    document.getElementById("cantidadModal").textContent = entradas;
+    document.getElementById("totalModal").textContent = coste;
+
+    // Mostramos la ventana modal
+    document.getElementById("modal-confirmacion").style.display = "flex";
+    return false;
+}
+
+// Cerrar ventana modal
+function cerrarModalCompra() {
+    document.getElementById("modal-confirmacion").style.display = "none";
+}
