@@ -21,45 +21,44 @@
         <p id="porcentaje">0%</p>
     </div>
     
- <nav id="menu">
-    <div class="menu-contenedor">
-      <!-- Bloque izquierdo -->
-      <div class="menu-izquierda">
-        <h1 class="logo">
-          <a href="index.html">ALDEA SONORA</a>
-        </h1>
+<nav id="menu">
+  <div class="menu-contenedor">
+    <!-- Bloque izquierdo -->
+    <div class="menu-izquierda">
+      <h1 class="logo">
+        <a href="index.html">ALDEA SONORA</a>
+      </h1>
 
-        <!-- Menú principal (añadido) -->
-        <ul class="nav-links">
-          <li><a href="artistas.html">Artistas</a></li>
-          <li><a href="entradas.html">Entradas</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <!-- Bloque derecho (botón entradas) -->
-      <div class="menu-derecha">
-        <a href="compra.html" class="boton-comprar">Comprar entradas</a>
-      </div>
-
-      <!-- Icono hamburguesa -->
-      <i class="fas fa-bars hamburguesa" onclick="openMenu()"></i>
-
-      <!-- Menú móvil lateral -->
-      <ul class="menu-movil">
-  <!-- Botón cerrar -->
-  <li>
-    <button class="btn-cerrar" onclick="closeMenu()">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </li>
-        <!-- Enlaces del menú móvil -->
-        <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
-        <li><a href="entradas.html" onclick="closeMenu()">Entradas</a></li>
-        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      <!-- Menú principal escritorio -->
+      <ul class="nav-links">
+        <li><a href="artistas.html">Artistas</a></li>
+        <li><a href="entradas.html">Entradas</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
-  </nav>
+
+    <!-- Bloque derecho -->
+    <div class="menu-derecha">
+      <a href="compra.html" class="boton-comprar">Comprar entradas</a>
+    </div>
+
+    <!-- Icono hamburguesa -->
+    <button class="hamburguesa" onclick="openMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Menú móvil lateral -->
+<nav class="menu-movil" id="menuMovil">
+  <button class="btn-cerrar" onclick="closeMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <a href="artistas.html" onclick="closeMenu()">Artistas</a>
+  <a href="entradas.html" onclick="closeMenu()">Entradas</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+</nav>
+
 
 
 <section class="artistas">
@@ -123,7 +122,7 @@
     </div>
 
    <div class="footer-spotify">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="575" height="400" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1hiNWryyY6LbQG5QIKz210?utm_source=generator&theme=0" width="100%" height="400" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
 
