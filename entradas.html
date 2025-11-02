@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Artistas Aldea sonora</title>
+    <meta charset="utf-8">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body> 
+ <nav id="menu">
+    <div class="menu-contenedor">
+      <!-- Bloque izquierdo -->
+      <div class="menu-izquierda">
+        <h1 class="logo">
+          <a href="index.html">ALDEA SONORA</a>
+        </h1>
+
+        <!-- Menú principal (añadido) -->
+        <ul class="nav-links">
+          <li><a href="artistas.html">Artistas</a></li>
+          <li><a href="entradas.html">Entradas</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Bloque derecho (botón entradas) -->
+      <div class="menu-derecha">
+        <a href="compra.html" class="boton-comprar">Comprar entradas</a>
+      </div>
+
+      <!-- Icono hamburguesa -->
+      <i class="fas fa-bars hamburguesa" onclick="openMenu()"></i>
+
+      <!-- Menú móvil lateral -->
+      <ul class="menu-movil">
+        <!-- Botón cerrar -->
+        <button class="btn-cerrar" onclick="closeMenu()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Enlaces del menú móvil -->
+        <li><a href="artistas.html" onclick="closeMenu()">Artistas</a></li>
+        <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<section class="info-festival">
+  <div class="info-item">
+    <span class="label">ENTRADA</span>
+    <h3>NORMAL<br>65 €</h3>
+    <p>
+      · Acceso a los 2 días del festival<br>
+      · Zona general frente al escenario<br>
+      · Food trucks y mercado artesanal<br>
+      · Transporte lanzadera desde Sigüenza<br>
+      · Pulsera conmemorativa básica
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="info-item">
+    <span class="label">ENTRADA</span>
+    <h3>PREMIUM<br>110 €</h3>
+    <p>
+      · Todo lo de la Normal<br>
+      · Zona preferente más cercana<br>
+      · Entrada al recinto 1h antes<br>
+      · 10% descuento en bebidas<br>
+      · Zona cubierta de descanso<br>
+      · Pulsera exclusiva Premium
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="info-item">
+    <span class="label">ENTRADA</span>
+    <h3>VIP<br>180 €</h3>
+    <p>
+      · Todo lo de la Premium<br>
+      · Acceso al lounge backstage<br>
+      · Parking VIP junto al recinto<br>
+      · Pack de merchandising oficial<br>
+      · Meet & Greet con artistas<br>
+      · Catering exclusivo
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+
+
+  <div class="footer-bottom">
+    <div class="footer-mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11687.758139876569!2d-2.652492837087867!3d41.06660269147487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43451448b54a53%3A0x965b94eedaf268de!2s19250%20Sig%C3%BCenza%2C%20Guadalajara!5e1!3m2!1ses!2ses!4v1761903532318!5m2!1ses!2ses"
+        width="1200" height="200" style="border:0;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 Aldea Sonora · Sigüenza, Guadalajara @aldeasonora.festival
+    </p>
+  </div>
+</footer>
+
+</body>
+
+
+</html>
