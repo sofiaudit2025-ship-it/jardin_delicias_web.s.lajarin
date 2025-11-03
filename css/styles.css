@@ -848,6 +848,45 @@ nav#menu {
   z-index: 0;
 }
 
+/* === PATROCINADORES === */
+.patrocinadores {
+  background-color: var(--color-fondo);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logos-patrocinadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logos-patrocinadores img {
+  max-height: 60px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  filter: grayscale(100%);
+}
+
+.logos-patrocinadores img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .logos-patrocinadores {
+    gap: 25px;
+  }
+
+  .logos-patrocinadores img {
+    max-height: 45px;
+  }
+}
 
 @media screen and (max-width: 1024px) {
 
