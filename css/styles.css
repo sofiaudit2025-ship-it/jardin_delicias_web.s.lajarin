@@ -848,12 +848,12 @@ nav#menu {
   z-index: 0;
 }
 
-/* === PATROCINADORES === */
+/* === PATROCINADORES (versión estática) === */
 .patrocinadores {
-  background-color: var(--color-fondo);
-  padding: 40px 20px;
+  background-color: #0a0a0a;
+  padding: 50px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logos-patrocinadores {
@@ -861,20 +861,35 @@ nav#menu {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logos-patrocinadores img {
-  max-height: 50px;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
   opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.2s ease;
   filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  mix-blend-mode: lighten;
 }
 
 .logos-patrocinadores img:hover {
   opacity: 1;
   filter: grayscale(0%);
-  
+  }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logos-patrocinadores {
+    gap: 40px;
+  }
+
+  .logos-patrocinadores img {
+    height: 45px;
+  }
 }
 
 /* Versión móvil */
