@@ -978,4 +978,26 @@ nav#menu {
     font-size: 1.5rem;       /* Ajusta el tamaño para móviles */
   }
 
+  .info-festival {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .divider {
+    width: 80%;
+    height: 1.5px;
+    background-color: #ffffff;
+    opacity: 0.6;
+  }
+
+  .info-item-entradas {
+    text-align: center;
+  }
+
+  .label, 
+  .info-item-entradas h3, 
+  .info-item-entradas p {
+    text-align: center;
+  }
+
 }
