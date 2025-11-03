@@ -961,4 +961,21 @@ nav#menu {
     display: block;
   }
 
+    .info-festival {
+    flex-direction: column;  /* Apila los bloques uno debajo del otro */
+    gap: 30px;               /* Reduce el espacio entre ellos */
+    padding: 60px 20px;
+  }
+
+  .divider-index {
+    width: 80%;
+    height: 1px;             /* La línea divisoria pasa a ser horizontal */
+    background-color: #ffffff;
+    opacity: 0.4;
+  }
+
+  .info-item h2 {
+    font-size: 1.5rem;       /* Ajusta el tamaño para móviles */
+  }
+
 }

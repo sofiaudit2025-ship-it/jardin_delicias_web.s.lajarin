@@ -106,3 +106,4 @@ function comprar() {
 function cerrarModalCompra() {
     document.getElementById("modal-confirmacion").style.display = "none";
 }
+
