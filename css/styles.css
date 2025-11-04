@@ -478,7 +478,7 @@ nav#menu {
 /* PAGINA ARTISTAS*/
 
 #artistas-invitados > h2 {
-  font-size: 5rem;          /* tamaño más grande */
+  font-size: 3rem;          /* tamaño más grande */
   text-align: center;
   font-weight: 900;
   margin-top: 3rem;
@@ -941,7 +941,7 @@ nav#menu {
   }
 
   #artistas-invitados > h2 {
-    font-size: 2rem;
+    font-size: 0.65rem;
     line-height: 1.1;
   }
 
